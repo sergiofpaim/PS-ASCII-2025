@@ -1,5 +1,4 @@
-/* Global Styles */
-html,
+Global Styles html,
 body,
 h1,
 h2,
@@ -63,9 +62,24 @@ h6 {
     font-size: 18px;
 }
 
+.project-card:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
 .social-icons {
     text-align: center;
     font-size: 30px;
+}
+
+@media (min-width: 1024px) {
+    .w3-third {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
 }
 
 i.fa,
@@ -132,19 +146,23 @@ i.fad {
     }
 
     .social-icons {
-        text-align: center;
         font-size: 20px;
+        gap: 10px;
     }
 
     footer {
         padding: 10px;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
     }
 
     #footer-text {
-        font-size: 14px;
+        font-size: 8px;
     }
 
-    .footer-nav a {
-        font-size: 14px;
+    .footer-nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
     }
 }
