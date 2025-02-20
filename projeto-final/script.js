@@ -59,47 +59,74 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Example 1: "Mary Had a Little Lamb" (simplified)
-    window.playSong1 = function () {
-        const song1 = [
-            { note: "E4", duration: 500 },
-            { note: "D4", duration: 500 },
+    window.playSongParabens = function () {
+        const songParabens = [
+            { note: "C4", duration: 500 },
             { note: "C4", duration: 500 },
             { note: "D4", duration: 500 },
-            { note: "E4", duration: 500 },
-            { note: "E4", duration: 500 },
+            { note: "C4", duration: 500 },
+            { note: "F4", duration: 500 },
             { note: "E4", duration: 750 },
+
+            { note: "C4", duration: 500 },
+            { note: "C4", duration: 500 },
             { note: "D4", duration: 500 },
-            { note: "D4", duration: 500 },
-            { note: "D4", duration: 750 },
-            { note: "E4", duration: 500 },
+            { note: "C4", duration: 500 },
             { note: "G4", duration: 500 },
-            { note: "G4", duration: 750 }
+            { note: "F4", duration: 750 },
+
+            { note: "C4", duration: 500 },
+            { note: "C4", duration: 500 },
+            { note: "C5", duration: 500 },
+            { note: "A4", duration: 500 },
+            { note: "F4", duration: 500 },
+            { note: "E4", duration: 500 },
+            { note: "D4", duration: 750 },
+
+            { note: "A#4", duration: 500 },
+            { note: "A#4", duration: 500 },
+            { note: "A4", duration: 500 },
+            { note: "F4", duration: 500 },
+            { note: "G4", duration: 500 },
+            { note: "F4", duration: 750 }
         ];
-        playSong(song1);
+        playSong(songParabens);
     }
 
-    // Example 2: "Ode to Joy" (simplified)
-    window.playSong2 = function () {
-        const song2 = [
-            { note: "E4", duration: 500 },
-            { note: "E4", duration: 500 },
-            { note: "F4", duration: 500 },
-            { note: "G4", duration: 500 },
-            { note: "G4", duration: 500 },
-            { note: "F4", duration: 500 },
-            { note: "E4", duration: 500 },
-            { note: "D4", duration: 500 },
-            { note: "C4", duration: 500 },
+
+    window.playSongDoremi = function () {
+        const songDoremi = [
             { note: "C4", duration: 500 },
             { note: "D4", duration: 500 },
-            { note: "E4", duration: 500 },
-            { note: "E4", duration: 750 },
+            { note: "E4", duration: 350 },
+            { note: "F4", duration: 650 },
+            { note: "F4", duration: 350 },
+            { note: "F4", duration: 750 },
+
+            { note: "C4", duration: 500 },
+            { note: "D4", duration: 500 },
+            { note: "C4", duration: 350 },
+            { note: "D4", duration: 650 },
+            { note: "D4", duration: 350 },
             { note: "D4", duration: 750 },
-            { note: "D4", duration: 750 }
+
+            { note: "C4", duration: 500 },
+            { note: "G4", duration: 500 },
+            { note: "F4", duration: 350 },
+            { note: "E4", duration: 650 },
+            { note: "E4", duration: 350 },
+            { note: "E4", duration: 750 },
+
+            { note: "C4", duration: 500 },
+            { note: "D4", duration: 500 },
+            { note: "E4", duration: 350 },
+            { note: "F4", duration: 650 },
+            { note: "F4", duration: 350 },
+            { note: "F4", duration: 750 }
         ];
-        playSong(song2);
+        playSong(songDoremi);
     }
+
 
     // Handle recording and playback functionality
     const recordButton = document.getElementById("record-btn");

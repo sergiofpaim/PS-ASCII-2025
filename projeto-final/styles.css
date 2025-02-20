@@ -137,33 +137,34 @@ h6 {
 /* Black Piano Keys Styling */
 .piano-key.black {
     width: 30px;
-    height: 120px;
+    height: 130px;
     background: black;
     color: white;
     position: absolute;
     z-index: 2;
+    top: 0px;
     border-radius: 0 0 5px 5px;
 }
 
 /* Positioning of Black Keys */
 .piano-key[data-note="C#4"] {
-    left: 38px;
+    left: 45px;
 }
 
 .piano-key[data-note="D#4"] {
-    left: 88px;
+    left: 95px;
 }
 
 .piano-key[data-note="F#4"] {
-    left: 188px;
+    left: 195px;
 }
 
 .piano-key[data-note="G#4"] {
-    left: 238px;
+    left: 245px;
 }
 
 .piano-key[data-note="A#4"] {
-    left: 288px;
+    left: 295px;
 }
 
 .piano-key[data-note="C#5"] {
@@ -187,9 +188,40 @@ h6 {
         height: 80px;
     }
 
-    /* Centralizing the Modal Content */
-    #piano-container {
-        padding: 10px;
+    .piano-key.piano-key.black {
+        width: 15px;
+        height: 55px;
+    }
+
+    /* Dynamic Positioning of Black Keys */
+    .piano-key[data-note="C#4"] {
+        left: calc(12% + 1px);
+        /* Dynamically calculate the position */
+    }
+
+    .piano-key[data-note="D#4"] {
+        left: calc(23% + 1px);
+        /* Dynamically calculated */
+    }
+
+    .piano-key[data-note="F#4"] {
+        left: calc(47% + 1px);
+        /* Dynamically calculated */
+    }
+
+    .piano-key[data-note="G#4"] {
+        left: calc(58% + 1px);
+        /* Dynamically calculated */
+    }
+
+    .piano-key[data-note="A#4"] {
+        left: calc(70% + 1px);
+        /* Dynamically calculated */
+    }
+
+    .piano-key[data-note="C#5"] {
+        left: calc(90% + 1px);
+        /* Dynamically calculated */
     }
 }
 
