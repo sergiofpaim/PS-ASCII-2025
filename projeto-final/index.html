@@ -214,8 +214,12 @@
                         <i class="fas fa-comment-dots fa-fw w3-margin-right w3-xxlarge"></i>Sessão Interativa
                     </h2>
                     <button onclick="openModal()" class="style-button">Clique para iniciar</button>
+                    <p>
+                        Nesta demonstração, cada tecla é projetada para oferecer feedback visual e auditivo imediato. A
+                        experiência permite tocar, gravar e reproduzir
+                        melodias.
+                    </p>
                 </div>
-
             </div>
         </div>
     </div>
@@ -248,13 +252,45 @@
         <div class="w3-modal-content w3-animate-zoom">
             <span onclick="closeModal()" class="w3-button w3-display-topright">&times;</span>
             <div class="w3-container">
-                <h2>Sessão Interativa</h2>
-                <p>Musica de piano tututu</p>
+                <h2 style="text-align: center;">Sessão Interativa</h2>
+                <div id="piano-container">
+                    <div id="piano-keys">
+                        <button class="piano-key" data-note="C4">C</button>
+                        <button class="piano-key black" data-note="C#4"></button>
+                        <button class="piano-key" data-note="D4">D</button>
+                        <button class="piano-key black" data-note="D#4"></button>
+                        <button class="piano-key" data-note="E4">E</button>
+                        <button class="piano-key" data-note="F4">F</button>
+                        <button class="piano-key black" data-note="F#4"></button>
+                        <button class="piano-key" data-note="G4">G</button>
+                        <button class="piano-key black" data-note="G#4"></button>
+                        <button class="piano-key" data-note="A4">A</button>
+                        <button class="piano-key black" data-note="A#4"></button>
+                        <button class="piano-key" data-note="B4">B</button>
+                        <button class="piano-key" data-note="C5">C</button>
+                        <button class="piano-key black" data-note="C#5"></button>
+                    </div>
+
+                    <div id="recording-controls" style="margin-top: 20px;">
+                        <button id="record-btn" title="Iniciar/Parar Gravação">
+                            <i class="fa-solid fa-record-vinyl" style="font-size: 24px;"></i>
+                        </button>
+                        <button id="play-recording" disabled title="Reproduzir Gravação">
+                            <i class="fa-solid fa-play" style="font-size: 24px;"></i>
+                        </button>
+                    </div>
+
+                    <div id="playback-controls" style="margin-top:20px;">
+                        <h3 style="text-align: center;">Exemplos</h3>
+                        <button onclick="playSong1()">Mary Had a Little Lamb</button>
+                        <button onclick="playSong2()">Ode to Joy</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.39/Tone.js"></script>
     <script src="script.js"></script>
 
 </body>
