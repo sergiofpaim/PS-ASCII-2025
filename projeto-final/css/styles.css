@@ -238,6 +238,13 @@ i.fad {
 /* Responsive Design for Smaller Screens */
 @media only screen and (max-width: 768px) {
 
+    /* Stack footer nav elements in a column */
+    .footer-nav {
+        flex-direction: column;
+        gap: 10px;
+        font-size: x-small;
+    }
+
     /* Modal Content */
     .w3-modal-content {
         width: 90%;

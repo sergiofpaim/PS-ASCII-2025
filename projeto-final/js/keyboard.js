@@ -190,6 +190,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Expose stopSong globally for external access (e.g., modal close)
     window.stopSong = stopSong;
 
+    // Handle recording and playback control elements
+    const recordButton = document.getElementById("record-btn");
+    const playRecordingButton = document.getElementById("play-recording");
+
+    // Toggle recording mode when the record button is clicked
+    recordButton.addEventListener("click", function () {
+        if (!isRecording) {
+            recordedNotes = [];         // Reset any previous recordings
+            isRecording = true;           // Start recording
+            recordButton.innerHTML = '<i class="fa-solid fa-stop" style="font-size: 24px; color: red;"></i>';
+        } else {
+            isRecording = false;          // Stop recording
+            recordButton.innerHTML = '<i class="fa-solid fa-record-vinyl" style="font-size: 24px;"></i>';
+            playRecordingButton.disabled = recordedNotes.length === 0; // Enable play button if there are recordings
+        }
+    });
+
+    // Play back the recorded notes when the play button is clicked
+    playRecordingButton.addEventListener("click", function () {
+        if (recordedNotes.length === 0) return; // Do nothing if no notes were recorded
+        playRecording(recordedNotes);
+    });
+
     // Define and expose a function to play "Happy Birthday" using a predefined sequence of notes
     window.playSongHappyBirthday = function () {
         const songHappyBirthday = [
@@ -259,26 +282,4 @@ document.addEventListener('DOMContentLoaded', () => {
         playSong(songDoremi, 1.5);
     };
 
-    // Handle recording and playback control elements
-    const recordButton = document.getElementById("record-btn");
-    const playRecordingButton = document.getElementById("play-recording");
-
-    // Toggle recording mode when the record button is clicked
-    recordButton.addEventListener("click", function () {
-        if (!isRecording) {
-            recordedNotes = [];         // Reset any previous recordings
-            isRecording = true;           // Start recording
-            recordButton.innerHTML = '<i class="fa-solid fa-stop" style="font-size: 24px; color: red;"></i>';
-        } else {
-            isRecording = false;          // Stop recording
-            recordButton.innerHTML = '<i class="fa-solid fa-record-vinyl" style="font-size: 24px;"></i>';
-            playRecordingButton.disabled = recordedNotes.length === 0; // Enable play button if there are recordings
-        }
-    });
-
-    // Play back the recorded notes when the play button is clicked
-    playRecordingButton.addEventListener("click", function () {
-        if (recordedNotes.length === 0) return; // Do nothing if no notes were recorded
-        playRecording(recordedNotes);
-    });
 });
