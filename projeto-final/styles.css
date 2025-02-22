@@ -61,16 +61,6 @@ h6 {
     animation: zoomIn 0.3s ease-in-out;
 }
 
-@keyframes zoomIn {
-    from {
-        transform: scale(0);
-    }
-
-    to {
-        transform: scale(1);
-    }
-}
-
 /* Close Button in the Modal */
 .w3-button.w3-display-topright {
     position: absolute;
@@ -129,11 +119,6 @@ h6 {
     font-weight: bold;
 }
 
-.piano-key:active {
-    background: #ddd;
-    /* Active state (pressed key) */
-}
-
 /* Black Piano Keys Styling */
 .piano-key.black {
     width: 30px;
@@ -144,6 +129,16 @@ h6 {
     z-index: 2;
     top: 0px;
     border-radius: 0 0 5px 5px;
+}
+
+.piano-key.active {
+    background-color: #dddddda4 !important;
+    transition: background-color 0.1s;
+}
+
+.piano-key.black.active {
+    background-color: rgb(255, 255, 255) !important;
+    transition: background-color 0.1s;
 }
 
 /* Positioning of Black Keys */
@@ -169,6 +164,75 @@ h6 {
 
 .piano-key[data-note="C#5"] {
     left: 388px;
+}
+
+/* General Layout Styles */
+.w3-teal {
+    background-color: #009688;
+}
+
+.w3-xlarge {
+    font-size: 24px;
+}
+
+.w3-display-topright {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.w3-large {
+    font-size: 18px;
+}
+
+/* Project Card Hover Effect */
+.project-card:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Icons Styling */
+.social-icons {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* FontAwesome Icon Colors */
+i.fa,
+i.fab,
+i.fas,
+i.far,
+i.fal,
+i.fad {
+    color: #4181b4;
+}
+
+/* Styled Button */
+.style-button {
+    background-color: #3498db;
+    color: white;
+    padding: 20px 50px;
+    font-size: 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.style-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+@media (min-width: 1024px) {
+    .w3-third {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
 }
 
 /* Responsive Design for Smaller Screens */
@@ -225,71 +289,12 @@ h6 {
     }
 }
 
-/* General Layout Styles */
-.w3-teal {
-    background-color: #009688;
-}
-
-.w3-xlarge {
-    font-size: 24px;
-}
-
-.w3-display-topright {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.w3-large {
-    font-size: 18px;
-}
-
-/* Project Card Hover Effect */
-.project-card:hover {
-    transform: scale(1.02);
-    transition: 0.3s;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Social Icons Styling */
-.social-icons {
-    text-align: center;
-    font-size: 30px;
-}
-
-@media (min-width: 1024px) {
-    .w3-third {
-        position: sticky;
-        top: 0;
-        z-index: 1;
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
     }
-}
 
-/* FontAwesome Icon Colors */
-i.fa,
-i.fab,
-i.fas,
-i.far,
-i.fal,
-i.fad {
-    color: #4181b4;
-}
-
-/* Styled Button */
-.style-button {
-    background-color: #3498db;
-    color: white;
-    padding: 20px 50px;
-    font-size: 24px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: block;
-    margin: 0 auto;
-}
-
-.style-button:hover {
-    background-color: #2980b9;
-    transform: scale(1.1);
+    to {
+        transform: scale(1);
+    }
 }
