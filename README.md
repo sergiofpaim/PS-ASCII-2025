@@ -22,15 +22,9 @@ Para executar esta página no GitHub Pages, siga os passos abaixo:
    ```
 2. **Navegue até o Diretório do Projeto**:
    ```bash
-   cd seu-repositorio
+   cd PS-ASCII-2025
    ```
-3. **Configure o GitHub Pages**:
-   - Acesse o repositório no GitHub.
-   - Vá para as configurações do repositório (`Settings`).
-   - Na seção `Pages`, selecione a branch `main` (ou `master`) e a pasta `/root` para a fonte do GitHub Pages.
-   - Clique em `Save`.
-
-4. **Acesse a Página**:
+3. **Acesse a Página**:
    - O site está hospedado e pode ser acessado no endereço:
      ```
      https://sergiofpaim.github.io/PS-ASCII-2025/projeto-final/
