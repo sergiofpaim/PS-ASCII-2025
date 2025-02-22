@@ -294,6 +294,10 @@ i.fad {
         left: calc(90% + 1px);
         /* Dynamically calculated */
     }
+
+    .status {
+        font-size: 14px;
+    }
 }
 
 @keyframes zoomIn {
