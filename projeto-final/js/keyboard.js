@@ -36,7 +36,13 @@ function clearKeyHighlights() {
     });
 }
 
+// Sets status of the keyboard
+function changeStatus(status) {
+    document.getElementById("status").innerHTML = `${status ?? 'Execução Livre'}`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    changeStatus();
     // Variables to manage playback state and scheduled timeouts
     let isPlaying = false;
     let currentTimeouts = [];
@@ -101,9 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Plays back a sequence of recorded notes using their recorded timings and durations
     function playRecording(notes) {
-        clearKeyHighlights();
+        if (isPlaying)
+            stopSong();
 
-        if (isPlaying) stopSong();
+        changeStatus("Reproduzindo gravação");
+
         if (notes.length === 0) return; // Exit if there are no recorded notes
 
         isPlaying = true;
@@ -127,20 +135,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }, delay);
 
             currentTimeouts.push(attackTimeout);
+
         });
 
         // Reset playback state after the last note is finished
         setTimeout(() => {
             isPlaying = false;
+            changeStatus(); // Clear the status after the last note is played
         }, notes[notes.length - 1].time - startTime + notes[notes.length - 1].duration);
-
-        clearKeyHighlights();
     }
 
     // Plays a predefined song by scheduling note attacks and releases with a sustain multiplier
-    function playSong(song, sustainMultiplier = 1.5) {
-        clearKeyHighlights();
-        if (isPlaying) stopSong();
+    function playSong(title, song, sustainMultiplier = 1.5) {
+
+        if (isPlaying)
+            stopSong();
+
+        changeStatus(`Reproduzindo: ${title}`);
+
         isPlaying = true;
         let cumulativeTime = 0; // Tracks total elapsed time for scheduling notes
         const timeouts = [];
@@ -176,11 +188,12 @@ document.addEventListener('DOMContentLoaded', () => {
             isPlaying = false;
         }, cumulativeTime - lastNote.duration + finalSustain);
 
-        clearKeyHighlights();
     }
 
     // Stops the song playback by clearing all scheduled timeouts and resetting state
     function stopSong() {
+        changeStatus();
+        clearKeyHighlights();
         currentTimeouts.forEach(clearTimeout);
         currentTimeouts = [];
         isPlaying = false;
@@ -196,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle recording mode when the record button is clicked
     recordButton.addEventListener("click", function () {
+        stopSong(); // Stop any currently playing song before recording
         if (!isRecording) {
             recordedNotes = [];         // Reset any previous recordings
             isRecording = true;           // Start recording
@@ -216,70 +230,70 @@ document.addEventListener('DOMContentLoaded', () => {
     // Define and expose a function to play "Happy Birthday" using a predefined sequence of notes
     window.playSongHappyBirthday = function () {
         const songHappyBirthday = [
-            { note: "C4", duration: 500 },
-            { note: "C4", duration: 500 },
-            { note: "D4", duration: 500 },
-            { note: "C4", duration: 500 },
-            { note: "F4", duration: 500 },
-            { note: "E4", duration: 750 },
+            { note: "C4", duration: 330 },
+            { note: "C4", duration: 110 },
+            { note: "D4", duration: 440 },
+            { note: "C4", duration: 440 },
+            { note: "F4", duration: 440 },
+            { note: "E4", duration: 880 },
 
-            { note: "C4", duration: 500 },
-            { note: "C4", duration: 500 },
-            { note: "D4", duration: 500 },
-            { note: "C4", duration: 500 },
-            { note: "G4", duration: 500 },
-            { note: "F4", duration: 750 },
+            { note: "C4", duration: 330 },
+            { note: "C4", duration: 110 },
+            { note: "D4", duration: 440 },
+            { note: "C4", duration: 440 },
+            { note: "G4", duration: 440 },
+            { note: "F4", duration: 880 },
 
-            { note: "C4", duration: 500 },
-            { note: "C4", duration: 500 },
-            { note: "C5", duration: 500 },
-            { note: "A4", duration: 500 },
-            { note: "F4", duration: 500 },
-            { note: "E4", duration: 500 },
-            { note: "D4", duration: 750 },
+            { note: "C4", duration: 330 },
+            { note: "C4", duration: 110 },
+            { note: "C5", duration: 440 },
+            { note: "A4", duration: 440 },
+            { note: "F4", duration: 440 },
+            { note: "E4", duration: 440 },
+            { note: "D4", duration: 880 },
 
-            { note: "A#4", duration: 500 },
-            { note: "A#4", duration: 500 },
-            { note: "A4", duration: 500 },
-            { note: "F4", duration: 500 },
-            { note: "G4", duration: 500 },
-            { note: "F4", duration: 750 }
+            { note: "A#4", duration: 330 },
+            { note: "A#4", duration: 110 },
+            { note: "A4", duration: 440 },
+            { note: "F4", duration: 440 },
+            { note: "G4", duration: 440 },
+            { note: "F4", duration: 880 }
         ];
-        playSong(songHappyBirthday, 1.5);
+        playSong("Parabéns pra você", songHappyBirthday, 1.5);
     };
 
     // Define and expose a function to play a "Do Re Mi" style song using a predefined note sequence
     window.playSongDoremi = function () {
         const songDoremi = [
-            { note: "C4", duration: 500 },
-            { note: "D4", duration: 500 },
-            { note: "E4", duration: 350 },
-            { note: "F4", duration: 650 },
-            { note: "F4", duration: 350 },
-            { note: "F4", duration: 750 },
+            { note: "C4", duration: 220 },
+            { note: "D4", duration: 220 },
+            { note: "E4", duration: 220 },
+            { note: "F4", duration: 440 },
+            { note: "F4", duration: 220 },
+            { note: "F4", duration: 440 },
 
-            { note: "C4", duration: 500 },
-            { note: "D4", duration: 500 },
-            { note: "C4", duration: 350 },
-            { note: "D4", duration: 650 },
-            { note: "D4", duration: 350 },
-            { note: "D4", duration: 750 },
+            { note: "C4", duration: 220 },
+            { note: "D4", duration: 220 },
+            { note: "C4", duration: 220 },
+            { note: "D4", duration: 440 },
+            { note: "D4", duration: 220 },
+            { note: "D4", duration: 440 },
 
-            { note: "C4", duration: 500 },
-            { note: "G4", duration: 500 },
-            { note: "F4", duration: 350 },
-            { note: "E4", duration: 650 },
-            { note: "E4", duration: 350 },
-            { note: "E4", duration: 750 },
+            { note: "C4", duration: 220 },
+            { note: "G4", duration: 220 },
+            { note: "F4", duration: 220 },
+            { note: "E4", duration: 440 },
+            { note: "E4", duration: 220 },
+            { note: "E4", duration: 440 },
 
-            { note: "C4", duration: 500 },
-            { note: "D4", duration: 500 },
-            { note: "E4", duration: 350 },
-            { note: "F4", duration: 650 },
-            { note: "F4", duration: 350 },
-            { note: "F4", duration: 750 }
+            { note: "C4", duration: 220 },
+            { note: "D4", duration: 220 },
+            { note: "E4", duration: 220 },
+            { note: "F4", duration: 440 },
+            { note: "F4", duration: 220 },
+            { note: "F4", duration: 440 }
         ];
-        playSong(songDoremi, 1.5);
+        playSong("Dó Ré Mi Fá", songDoremi, 1.5);
     };
 
 });
