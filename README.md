@@ -49,19 +49,10 @@ Este repositório contém dois desafios, cada um com seu próprio diretório e a
 
 O Desafio 1 consiste em um botão que, ao ser clicado, adiciona um novo elemento colorido na página. O código HTML, CSS e JavaScript para este desafio está localizado no diretório `desafio-1`.
 
-- **Endereço no GitHub Pages:** [Desafio 1](https://seu-usuario.github.io/PS-ASCII-2025/desafio-1/)
+- **Endereço no GitHub Pages:** [Desafio 1](https://sergiofpaim.github.io/PS-ASCII-2025/desafio-1/)
 
 ### Desafio 2
 
 O Desafio 2 é similar ao Desafio 1, mas com algumas melhorias de estilo e responsividade. O código HTML, CSS e JavaScript para este desafio está localizado no diretório `desafio-2`.
 
-- **Endereço no GitHub Pages:** [Desafio 2](https://seu-usuario.github.io/PS-ASCII-2025/desafio-2/)
-
-**Acesse a Página**:
-   - O site está hospedado e pode ser acessado no endereço:
-     ```
-     https://sergiofpaim.github.io/PS-ASCII-2025/desafio-1/
-     ```
-     ```
-     https://sergiofpaim.github.io/PS-ASCII-2025/desafio-2/
-     ```
+- **Endereço no GitHub Pages:** [Desafio 2](https://sergiofpaim.github.io/PS-ASCII-2025/desafio-2/)
