@@ -1,0 +1,94 @@
+/* Basic reset and background style */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff, #4181b4);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.main-header {
+    background: linear-gradient(90deg, #ffffff, #063b66);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.main-header p {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+}
+
+/* Centered container adjusted for header and footer */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 130px);
+    margin-top: 80px;
+}
+
+/* Center button with hover effect */
+#actionButton {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #063b66;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#actionButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Fixed footer */
+.main-footer {
+    background: linear-gradient(90deg, #ffffff, #063b66);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Initial particle style */
+.particle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0) scale(1);
+}
+
+/* Particle animation */
+@keyframes particleAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-150px) scale(0.5);
+    }
+}
+
+/* Animation activation */
+.particle.animate {
+    animation: particleAnimation 1.5s ease-out forwards;
+}
