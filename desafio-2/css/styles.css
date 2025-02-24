@@ -37,7 +37,6 @@ body {
     justify-content: center;
     align-items: center;
     height: calc(100vh - 130px);
-    margin-top: 80px;
     padding: 10px;
     box-sizing: border-box;
     position: relative;
