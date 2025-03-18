@@ -25,21 +25,13 @@ Para executar esta página no GitHub Pages, siga os passos abaixo:
    cd PS-ASCII-2025
    ```
 3. **Acesse a Página**:
-   - O site está hospedado e pode ser acessado no endereço:
-     ```
-     https://sergiofpaim.github.io/PS-ASCII-2025/projeto-final/
-     ```
+   - O site está hospedado e pode ser acessado no endereço do GitHub Pages: **Endereço no GitHub Pages:** [Desafio Final](https://sergiofpaim.github.io/PS-ASCII-2025/desafio-final/)
 
+     
 ## Tecnologias Utilizadas
 
 - **Front-end**: HTML, CSS, JavaScript
 - **Bibliotecas**: Tone.js, FontAwesome, W3.CSS
-
-## Contato
-
-- **Email**: sergio.filho@outlook.com
-- **GitHub**: [sergiofpaim](https://github.com/sergiofpaim)
-- **LinkedIn**: [sergiofilhopaim](https://www.linkedin.com/in/sergiofilhopaim/)
 
 # Desafios
 
