@@ -25,7 +25,7 @@ Para executar esta página no GitHub Pages, siga os passos abaixo:
    cd PS-ASCII-2025
    ```
 3. **Acesse a Página**:
-   - O site está hospedado e pode ser acessado no endereço do GitHub Pages: **Endereço no GitHub Pages:** [Desafio Final](https://sergiofpaim.github.io/PS-ASCII-2025/desafio-final/)
+- O site está hospedado e pode ser acessado no endereço do GitHub Pages: **Endereço no GitHub Pages:** [Projeto Final](https://sergiofpaim.github.io/PS-ASCII-2025/projeto-final/)
 
      
 ## Tecnologias Utilizadas
